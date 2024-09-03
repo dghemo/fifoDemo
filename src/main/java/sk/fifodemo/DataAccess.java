@@ -20,10 +20,6 @@ public class DataAccess {
     private static final String PASSWORD = "admin";
 
     public DataAccess() {
-        init();
-    }
-
-    private void init() {
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
              Statement stmt = conn.createStatement()) {
             String sql = "CREATE TABLE IF NOT EXISTS SUSERS (USER_ID INT PRIMARY KEY, USER_GUID VARCHAR(64), USER_NAME VARCHAR(64))";
