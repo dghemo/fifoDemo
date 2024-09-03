@@ -20,10 +20,10 @@ public class App {
 
     public static void main(String[] args) throws InterruptedException {
 
-        //our fifo
+        //fifo
         BlockingQueue<ICommand> queue = new ArrayBlockingQueue<>(100);
 
-        //Database access
+        //database access
         DataAccess database = new DataAccess();
 
         Producer producer = new Producer(queue);
@@ -33,14 +33,14 @@ public class App {
         Thread consumerThread = new Thread(consumer);
         consumerThread.start();
 
-        // run commands with producer
+        // produce commands with producer
         producer.produce(new AddCommand(new User(1, "a1", "Robert")));
         producer.produce(new AddCommand(new User(2, "a2", "Martin")));
         producer.produce(new PrintAllCommand());
         producer.produce(new DeleteAllCommand());
         producer.produce(new PrintAllCommand());
 
-        // wait
+        // wait for processing
         Thread.sleep(1000);
 
         // Stop the consumer thread

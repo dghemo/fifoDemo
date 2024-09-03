@@ -4,10 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import sk.fifodemo.model.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataAccessTest {
     private final DataAccess dataAccess = new DataAccess();
@@ -51,5 +50,5 @@ public class DataAccessTest {
 
         List<User> users = dataAccess.getAll();
         assertEquals(0, users.size());
-}
+    }
 }
