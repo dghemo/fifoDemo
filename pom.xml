@@ -34,6 +34,11 @@
                 <version>${mockito.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.snf4j</groupId>
                 <artifactId>snf4j-core-slf4j</artifactId>
                 <version>${snf4j.version}</version>
