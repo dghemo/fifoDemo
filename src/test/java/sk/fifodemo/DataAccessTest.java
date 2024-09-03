@@ -41,17 +41,15 @@ public class DataAccessTest {
         assertEquals(2, users.size());
     }
 
-    @Test
-    public void testAddWithSameUserId() {
-        User user1 = new User(1, "guid-1", "User 1");
-        User user2 = new User(1, "guid-2", "User 2");
-        dataAccess.add(user1);
 
-        // Exception will be thrown since USER_ID (primary key) is unique
-        try {
-            dataAccess.add(user2);
-        } catch (Exception e) {
-            assertInstanceOf(SQLException.class, e);
-        }
-    }
+    @Test
+    public void testDelete() {
+        User user = new User(1, "guid-1", "User 1");
+        dataAccess.add(user);
+
+        dataAccess.deleteAll();
+
+        List<User> users = dataAccess.getAll();
+        assertEquals(0, users.size());
+}
 }

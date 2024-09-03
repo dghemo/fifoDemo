@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingQueue;
 
 /**
  * The Producer class is responsible for producing commands and placing them into a blocking queue.
- * This class implements the Runnable interface, allowing it to be run in a separate thread. However in this case it is producing from main method of App class
+ * This class implements the Runnable interface, allowing it to be run in a separate thread. However, in this case it is producing from main method of App class
  */
 public class Producer implements Runnable {
     private final BlockingQueue<ICommand> queue;
